@@ -1,0 +1,142 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+}
+
+body {
+  background-color: #fed330;
+  height: 100vh;
+  font-size: 16px;
+}
+
+.todo-main {
+  width: 900px;
+  max-width: 90%;
+  background-color: #394049;
+  margin: 40px auto;
+  padding: 50px;
+  color: #d3d4d6;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  .todo-main {
+    margin-top: 20px;
+    padding: 30px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+  }
+}
+.header__date-date {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.header__date-active {
+  font-size: 13px;
+  color: #61dbfb;
+}
+@media (max-width: 768px) {
+  .header__date-active {
+    margin-bottom: 15px;
+  }
+}
+.header__nav-list {
+  display: flex;
+}
+.header__nav-item {
+  margin: 0 15px;
+  color: #7e8187;
+  cursor: pointer;
+}
+.header__nav-item--active {
+  color: #d3d4d6;
+}
+@media (max-width: 768px) {
+  .header__nav-item {
+    margin-left: 0;
+  }
+}
+@media (max-width: 700px) {
+  .header__nav-list {
+    flex-direction: column;
+  }
+  .header__nav-item {
+    margin-bottom: 12px;
+  }
+}
+
+.form {
+  margin-bottom: 50px;
+}
+.form form {
+  width: 100%;
+}
+.form__input {
+  height: 35px;
+  width: 350px;
+  max-width: 100%;
+  margin-right: 10px;
+  border-radius: 3px;
+  padding: 0 10px;
+  background-color: white;
+  font-size: inherit;
+}
+.form__button {
+  background-color: #61dbfb;
+  color: #394049;
+  border-radius: 3px;
+  padding: 10px 15px;
+}
+@media (max-width: 700px) {
+  .form {
+    display: flex;
+  }
+  .form__input, .form__button {
+    width: 100%;
+  }
+  .form__input {
+    margin-bottom: 15px;
+  }
+}
+
+.todos__list {
+  border-top: 1px solid #7e8187;
+}
+.todos__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #7e8187;
+}
+.todos__item--finished .todos__check-btn {
+  color: #20bf6b;
+}
+.todos__item--finished .todos__text {
+  text-decoration: line-through;
+}
+.todos__title-and-btn {
+  display: flex;
+}
+.todos__check-btn, .todos__delete-btn {
+  color: #7e8187;
+  outline: none;
+  cursor: pointer;
+}
+.todos__text {
+  margin-left: 15px;
+}

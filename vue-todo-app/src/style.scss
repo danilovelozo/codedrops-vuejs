@@ -1,0 +1,178 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+}
+
+body {
+  background-color: #fed330;
+  height: 100vh;
+  font-size: 16px;
+}
+
+.todo-main {
+  width: 900px;
+  max-width: 90%;
+  background-color: #394049;
+  margin: 40px auto;
+  padding: 50px;
+  color: #d3d4d6;
+  border-radius: 5px;
+  
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    padding: 30px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+  
+  &__date {
+    &-date {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    &-active {
+      font-size: 13px;
+      color: #61dbfb;
+    }
+    
+    @media (max-width: 768px) {
+      &-active {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  
+  &__nav {
+    &-list {
+      display: flex;
+    }
+    
+    &-item {
+      margin: 0 15px;
+      color: #7e8187;
+      cursor: pointer;
+      
+      &--active {
+          color: #d3d4d6;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      &-item {
+        margin-left: 0;
+      }
+    }
+    
+    @media (max-width: 700px) {
+      &-list {
+        flex-direction: column;
+      }
+      
+      &-item {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+.form {
+  margin-bottom: 50px;
+  
+  form {
+    width: 100%;
+  }
+  
+  &__input {
+    height: 35px;
+    width: 350px;
+    max-width: 100%;
+    margin-right: 10px;
+    border-radius: 3px;
+    padding: 0 10px;
+    background-color: white;
+    font-size: inherit;
+  }
+  
+  &__button {
+    background-color: #61dbfb;
+    color: #394049;
+    border-radius: 3px;
+    padding: 10px 15px;
+  }
+  
+  @media (max-width: 700px) {
+    display: flex;
+    
+    &__input, 
+    &__button {
+      width: 100%;
+    }
+    
+    &__input {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.todos {
+  
+  $parent: &;
+
+  &__list {
+    border-top: 1px solid #7e8187;
+  }
+  
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #7e8187;
+    
+    &--finished {
+      #{ $parent } {
+        &__check-btn {
+          color: #20bf6b;
+        }
+        
+        &__text {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+  
+  &__title-and-btn {
+    display: flex;
+  }
+  
+  &__check-btn,
+  &__delete-btn {
+    color: #7e8187;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  &__check-btn {}
+  
+  &__delete-btn {} 
+  
+  &__text {
+    margin-left: 15px;
+  }
+  
+}
